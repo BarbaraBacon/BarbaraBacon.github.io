@@ -24,7 +24,9 @@ var background = function (window) {
         
         // container which will be returned
         var background;
-        
+        var level;
+        var level2;
+        var finallevel;
         // ANIMATION VARIABLES HERE:
         var tree;
         var buildings = [];
@@ -79,9 +81,35 @@ var background = function (window) {
                 tree.scaleX = 0.30;
                 tree.scaleY = 0.30;
                     background.addChild(tree);
+                    
+                            
+        // Levels:
+        level = draw.bitmap('img/Level1.png');
+            level.x = 100;
+            level.y = groundY -285;
+            level.scaleX = 0.70;
+            level.scaleY = 0.70;
+                background.addChild(level);
+                
+         level2 = draw.bitmap('img/Level2.png');
+            level2.x = 3000;
+            level2.y = groundY -285;
+            level2.scaleX = 0.70;
+            level2.scaleY = 0.70;
+                background.addChild(level2);
+                
+        finallevel = draw.bitmap('img/FinalLevel.png');
+            finallevel.x = 6000;
+            finallevel.y = groundY -285;
+            finallevel.scaleX = 0.70;
+            finallevel.scaleY = 0.70;
+                background.addChild(finallevel);
             
-        } // end of render function - DO NOT DELETE
+      
+
         
+        // end of render function - DO NOT DELETE
+        } 
         
         // Perform background animation
         // called on each timer "tick" - 60 times per second
@@ -106,6 +134,20 @@ var background = function (window) {
                              building.x = canvasWidth;
                         }
             
+            }
+            
+            //Levels:
+            level.x = level.x - 1.3;
+            if(level.x <-100000){
+                level.x = canvasWidth;
+            }
+            level2.x = level2.x - 1.3;
+            if(level2.x <-100000){
+                level2.x = canvasWidth;
+            }
+            finallevel.x = finallevel.x - 1.3;
+            if(finallevel.x <-100000){
+                finallevel.x = canvasWidth;
             }
 
         } // end of update function - DO NOT DELETE
