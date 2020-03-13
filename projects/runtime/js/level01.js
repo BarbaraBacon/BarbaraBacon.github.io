@@ -107,7 +107,7 @@ var level01 = function (window) {
         };
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
-        game.setDebugMode(true);
+        game.setDebugMode(false);
 
         // BEGIN EDITING YOUR CODE HERE
 
@@ -123,21 +123,6 @@ var level01 = function (window) {
             
             var obstacleImage = draw.bitmap('img/sawblade.png');
             sawBladeHitZone.addChild(obstacleImage);
-            obstacleImage.x = -25;
-            obstacleImage.y = -25;
-            
-        }
-        function createVisibleSawBlade(x, y){
-            var hitZoneSize = 25;
-            var damageFromObstacle = 10;
-            var VisiblesawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
-            VisiblesawBladeHitZone.x = x;
-            VisiblesawBladeHitZone.y = y;
-            
-            game.addGameItem(VisiblesawBladeHitZone); 
-            
-            var obstacleImage = draw.bitmap('');
-            VisiblesawBladeHitZone.addChild(obstacleImage);
             obstacleImage.x = -25;
             obstacleImage.y = -25;
             
